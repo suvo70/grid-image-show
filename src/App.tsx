@@ -13,7 +13,6 @@ import {
 
 function App() {
   const [data, setData] = useState<PostType[]>([]);
-  const [isError, setIsError] = useState<boolean>(false);
   const [selectedCell, setSelectedCell] = useState<number | null>(null);
 
   // this will initiate the index for the first time and apply changes accordingly
@@ -55,7 +54,6 @@ function App() {
         setData(response);
       })
       .catch((err) => {
-        setIsError(true);
         console.error(err);
       });
     return () => {};
